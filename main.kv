@@ -1,0 +1,101 @@
+<Home>:
+    name:"Home"
+    MDBoxLayout:
+        orientation:'vertical'
+        name: "Gruposn"
+        
+        MDRelativeLayout:
+            id: rel_layout
+            orientation: 'vertical'
+            size_hint_y: None
+            height: dp(100)
+            md_bg_color: 205/255, 25/255,25/255, 1
+            MDLabel:
+                text: "Tasks Activity"
+                theme_text_color:"Custom"
+                font_size: dp(30)
+                bold:True
+                text_color: 1,1,1,1
+                halign: "center"
+            MDBoxLayout:
+                size_hint:None,None
+                size: '50dp','50dp'
+                pos_hint: {'center_x': 0.2,'center_y': 0.5}
+                md_bg_color:1,1,1,1
+                radius:[50,]
+                FitImage:
+                    size_hint:None,None
+                    size: '50dp','50dp'
+                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    source: "./source/icon/icon.png"
+                
+            
+
+                            
+        ScreenManager:
+            id: screen_manager
+            
+            TasksGroupDay:
+                id: taskdayid
+                name: "taskt_screen"
+                MDBoxLayout:
+                    id: varias_widget
+                    ScrollView:
+                        
+                        MDGridLayout:
+                            cols: 1
+                            adaptive_height: True
+                            spacing: '10dp'
+                            padding: [10,]
+                            MDCard:
+                                size_hint_y: None
+                                height: dp(80)
+                                md_bg_color: 87/255, 99/255, 208/255, 0.341
+                                radius: [4,4,50,4]
+                                MDGridLayout:
+                                    spacing:dp(5)
+                                    padding:[5,]
+                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                    cols:2
+                                    MDBoxLayout:
+                                        size_hint_x:.4
+                                        orientation: "vertical"
+                                        MDLabel:
+                                            text:"Dia 1"
+                                            halign:"center"
+                                            bold:True
+                                            font_size:dp(20)
+                                            
+                                        MDLabel:
+                                            text: "15/03/2023"
+                                            halign:"center"
+                                            font_size:dp(14)
+                                    
+                                    MDBoxLayout:
+                                        
+                            
+                    
+                MDRelativeLayout:
+                    
+                    pos_hint: {'center_x': 0.5,'top': 0.15}
+                    md_bg_color:205/255, 25/255,25/255, 1
+                    size_hint: None,None
+                    height:dp(80)
+                    
+                    width: dp(80)
+                    radius: [50,50,50,50]
+                    
+                    MDIconButton:
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                        size_hint:None,None
+                        theme_icon_color:"Custom"
+                        icon_size: dp(60)
+                        icon_color:  1,1,1,1
+                        icon: "plus-circle-outline"
+        MDBoxLayout:
+            id: rel_layout
+            orientation: 'vertical'
+            size_hint_y: None
+            height: dp(20)
+            md_bg_color: 205/255, 25/255,25/255, 1
+            

@@ -1,0 +1,23 @@
+<Welcome>:
+    name:"welc"
+    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+    md_bg_color: app.theme_cls.primary_color
+    MDRelativeLayout:
+        size_hint: None,None
+        size: 425, 600
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        FitImage:
+            source: "./source/icon/icon.png"
+            size_hint: None,None
+            color: 0,0,0,1
+            size: 300,300
+            
+            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        MDLabel:
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            text: "Tasks Activity"
+            theme_text_color:"Custom"
+            font_size: dp(30)
+            bold:True
+            text_color: app.theme_cls.opposite_bg_light
+            halign: "center"
