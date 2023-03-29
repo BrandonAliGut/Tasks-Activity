@@ -1,0 +1,61 @@
+<Day_list>:
+    opacity: 0.3 if root.stado == "no" else 1
+    MDGridLayout: 
+        spacing:dp(5)
+        padding:[5,]
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        cols:2
+        
+
+        MDBoxLayout:
+            size_hint_x:.5
+            orientation: "vertical"
+            MDLabel:
+                halign:"center"
+                text:"Dia "+ root.day + "  "+ root.date_at
+                bold:True
+                font_size:dp(20)
+                
+            
+            MDLabel:
+                endG:"start:" + root.start  +"  "+  "end:" + root.end if root.stado == "no" else '' 
+                startG: "start:" + root.start if root.stado == "si" else ''   +"  "+  "end:" + ""
+                text: self.endG if root.stado == "no" else self.startG
+                halign:"center"
+                font_size:dp(9)
+        MDBoxLayout:
+            id: box_data
+            size_hint_x:.5
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            MDBoxLayout:
+                orientation: 'horizontal'
+                pos_hint: {'center_x': 1,'center_y': 0.5}
+                size_hint_x: None
+                halign:"center"
+                width: icon1.width + icon2.width + icon3.width + icon4.width
+                MDIconButton:
+                    id: icon1
+                    pos_hint: {'center_y': 0.5}
+                    icon:"menu-open"
+                    on_release:
+                        app.irregister(root.id,root.stado)
+                MDIconButton:
+                    id: icon2
+                    pos_hint: {'center_y': 0.5}
+                    icon:"lock" if root.stado == "no" else "lock-open-variant"
+                    on_release: 
+                        app.day_lock(root.id)
+                MDIconButton:
+                    id: icon3
+                    pos_hint: {'center_y': 0.5}
+                    icon:"view-headline" 
+                    
+                
+                    
+                MDIconButton:
+                    id: icon4
+                    pos_hint: {'center_y': 0.5}
+                    icon:"delete"
+                    on_press:
+                        app.delete(root.id,root.stado)
+
